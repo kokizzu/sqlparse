@@ -32,6 +32,8 @@ jobs:
             os: ubuntu-latest
           - python-version: "py313"
             os: ubuntu-latest
+          - python-version: "py314"
+            os: ubuntu-latest
           # Test on additional platforms for Python 3.11
           - python-version: "py311"
             os: macos-latest

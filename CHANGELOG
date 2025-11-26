@@ -1,6 +1,13 @@
 Development Version
 -------------------
 
+Enhancements
+
+* Add support for Python 3.14.
+* Add `ATTACH` and `DETACH` to PostgreSQL keywords (pr808).
+* Add `INTERSECT` to close keywords in WHERE clause (pr820).
+* Support `REGEXP BINARY` comparison operator (pr817).
+
 Bug Fixes
 
 * Add additional protection against denial of service attacks when parsing
