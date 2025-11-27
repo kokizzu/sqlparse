@@ -208,3 +208,17 @@ def test_split_go(sql, num):  # issue762
 def test_split_multiple_case_in_begin(load_file):  # issue784
     stmts = sqlparse.split(load_file('multiple_case_in_begin.sql'))
     assert len(stmts) == 1
+
+
+def test_split_if_exists_in_begin_end():  # issue812
+    # IF EXISTS should not be confused with control flow IF
+    sql = """CREATE TASK t1 AS
+BEGIN
+    CREATE OR REPLACE TABLE temp1;
+    DROP TABLE IF EXISTS temp1;
+END;
+EXECUTE TASK t1;"""
+    stmts = sqlparse.split(sql)
+    assert len(stmts) == 2
+    assert 'CREATE TASK' in stmts[0]
+    assert 'EXECUTE TASK' in stmts[1]
