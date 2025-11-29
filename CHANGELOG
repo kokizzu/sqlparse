@@ -1,7 +1,9 @@
 Development Version
 -------------------
 
-Nothing yet.
+Bug Fixes
+
+* Fix splitting of BEGIN TRANSACTION statements (issue826).
 
 
 Release 0.5.4 (Nov 28, 2025)
