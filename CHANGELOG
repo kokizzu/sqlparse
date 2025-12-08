@@ -3,6 +3,8 @@ Development Version
 
 Bug Fixes
 
+* Fix DoS protection to raise SQLParseError instead of silently returning None
+  when grouping limits are exceeded (issue827).
 * Fix splitting of BEGIN TRANSACTION statements (issue826).
 
 
